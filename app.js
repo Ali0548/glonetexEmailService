@@ -24,7 +24,7 @@ app.use(express.json())
 //   next();
 // });
 // Create a transporter object using the provided SMTP settings
-app.get('/', ()=>console.log('Glonetex Email Service'));
+app.get('/', (req,res)=>{return res.json({msg:"I am working"})} );
 app.use('/glonetex/email', (req, res) => {
   console.log( req.body)
   const transporter = nodemailer.createTransport({
@@ -54,9 +54,11 @@ app.use('/glonetex/email', (req, res) => {
   // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error('Error:', error);
+      return res.json({status:false, msg:error})
+
     } else {
-      console.log('Email sent:', info.response);
+      return res.json({status:true, msg:info.response})
+   
     }
   });
 });
