@@ -29,18 +29,18 @@ app.use('/glonetex/email', (req, res) => {
   console.log( req.body)
   const transporter = nodemailer.createTransport({
     service: 'SMTP',
-    host: 'smtp.dreamhost.com',
+    host: 'smtp.hostinger.com',
     port: 465,
     secure: true, // Use SSL
     auth: {
-      user: 'solution.sales@glonetex.com',
-      pass: '23Dr@mhO$t_23',
+      user: 'no-replay@fitwellhub.com',
+      pass: 'No-Replay@password@1212',
     },
   });
 
   // Define the email content
   const mailOptions = {
-    from: 'solution.sales@glonetex.com', // Use your service's email address here
+    from: 'no-replay@fitwellhub.com', // Use your service's email address here
     to: req.body.email,
     subject: req.body.subject,
     html: req.body.html,
