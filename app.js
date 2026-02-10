@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 const dotenv = require('dotenv');
 dotenv?.config();
-const allowedOrigins = ['http://localhost:4001', 'https://sss-g-server.vercel.app', 'https://api.fitwellhub.com'];
+const allowedOrigins = ['http://localhost:4001', 'https://sss-g-server.vercel.app', 'https://api.fitwellhub.com', 'http://localhost:3000'];
 
 // Configure CORS middleware to allow only specified origins
 app.use(cors({
